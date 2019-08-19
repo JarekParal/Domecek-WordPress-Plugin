@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Domecek WordPress Plugin
- * Plugin URI:        http://example.com/plugin-name-uri/
+ * Plugin URI:        http://example.com/domecek-uri/
  * Description:       Domecek - WordPress Plugin for information system IS Domecek.
  * Version:           1.0.0
  * Author:            Jaroslav Páral
@@ -39,30 +39,30 @@ define( 'DOMECEK_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/class-domecek-activator.php
  */
-function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+function activate_domecek() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-domecek-activator.php';
+	domecek_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/class-domecek-deactivator.php
  */
-function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+function deactivate_domecek() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-domecek-deactivator.php';
+	domecek_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_domecek' );
+register_deactivation_hook( __FILE__, 'deactivate_domecek' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-domecek.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_domecek() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new domecek();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_domecek();
